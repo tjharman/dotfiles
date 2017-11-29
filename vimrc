@@ -1,10 +1,12 @@
  "ViMrc - TiM
 call plug#begin('~/.vim/plugged')
+	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-sensible'
 	Plug 'tpope/vim-unimpaired'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-commentary'
-	Plug 'tpope/vim-vinegar'
+	Plug 'tpope/vim-eunuch'
+	Plug 'justinmk/vim-dirvish'
 	Plug 'sstallion/vim-wtf'
 	Plug 'sjl/badwolf'
 	Plug 'itchyny/lightline.vim'
@@ -32,6 +34,12 @@ set lazyredraw			" Lazy redrawing
 set cursorline 			" Show where we're at
 set ttyfast 			" My TTY is plenty fast...
 set shortmess+=I
+let g:loaded_netrw             = 1 "$VIMRUNTIME/autoload/netrw.vim
+let g:loaded_netrwFileHandlers = 1 "$VIMRUNTIME/autoload/netrwFileHandlers.vim
+let g:loaded_netrwPlugin       = 1 "$VIMRUNTIME/plugin/netrwPlugin.vim
+let g:loaded_netrwSettings     = 1 "$VIMRUNTIME/autoload/netrwSettings.vim
+let g:loaded_vimball           = 1 "$VIMRUNTIME/autoload/vimball.vim
+let g:loaded_vimballPlugin     = 1 "$VIMRUNTIME/plugin/vimballPlugin.vim
 " Disable Arrow keys in Escape mode
 map <up> <nop>
 map <down> <nop>
@@ -107,9 +115,9 @@ endif
 if has('patch-7.4.793')
   set belloff+=ctrlg
 endif
-inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
-inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
-inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
+"inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
+"inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
+"inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
 let g:mucomplete#enable_auto_at_startup = 0
 let g:mucomplete#spel#good_words        = 1
 let g:mucomplete#spel#max               = 10
@@ -134,6 +142,8 @@ nmap <leader>gs <plug>(scratch-insert-reuse)
 nmap <leader>gS <plug>(scratch-insert-clear)
 xmap <leader>gs <plug>(scratch-selection-reuse)
 xmap <leader>gS <plug>(scratch-selection-clear)
+" Dirvish
+let g:dirvish_mode = ':sort ,^.*[\/],'
 " If we have python, tweak a few settings for speed
 if has('python')
   let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
