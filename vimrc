@@ -1,6 +1,5 @@
  "ViMrc - TiM
 call plug#begin('~/.vim/plugged')
-	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-sensible'
 	Plug 'tpope/vim-unimpaired'
 	Plug 'tpope/vim-surround'
@@ -115,9 +114,9 @@ endif
 if has('patch-7.4.793')
   set belloff+=ctrlg
 endif
-"inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
-"inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
-"inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
+inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
+inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
+inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
 let g:mucomplete#enable_auto_at_startup = 0
 let g:mucomplete#spel#good_words        = 1
 let g:mucomplete#spel#max               = 10
