@@ -23,7 +23,7 @@ call plug#begin('~/.vim/plugged')
 	endif
 call plug#end()
 set t_Co=256
-colorscheme wtf
+colorscheme badwolf
 let mapleader=","               " I'll use comma thanks
 set hidden
 set hlsearch			" highlight all search matches
@@ -114,9 +114,6 @@ endif
 if has('patch-7.4.793')
   set belloff+=ctrlg
 endif
-inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
-inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
-inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
 let g:mucomplete#enable_auto_at_startup = 0
 let g:mucomplete#spel#good_words        = 1
 let g:mucomplete#spel#max               = 10
@@ -153,3 +150,4 @@ if executable('rg')
 elseif executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif   
+let g:dirvish_mode = ':sort ,^.*[\/],'
