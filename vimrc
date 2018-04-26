@@ -78,7 +78,7 @@ nnoremap <silent> <leader>l :CtrlPLine<CR>           " CtrlPLine
 "Lightline
 set noshowmode 						" Don't need this lightline shows us what mode we're in.
 let g:lightline = {
-      \ 'colorscheme': 'Dracula',
+      \ 'colorscheme': 'darcula',
       \ }
 "Bufferline
 set showtabline=2
