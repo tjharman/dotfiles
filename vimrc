@@ -33,6 +33,7 @@ set lazyredraw			" Lazy redrawing
 set cursorline 			" Show where we're at
 set ttyfast 			" My TTY is plenty fast...
 set shortmess+=I
+set modeline
 let g:loaded_netrw             = 1 "$VIMRUNTIME/autoload/netrw.vim
 let g:loaded_netrwFileHandlers = 1 "$VIMRUNTIME/autoload/netrwFileHandlers.vim
 let g:loaded_netrwPlugin       = 1 "$VIMRUNTIME/plugin/netrwPlugin.vim
@@ -117,6 +118,10 @@ endif
 let g:mucomplete#enable_auto_at_startup = 0
 let g:mucomplete#spel#good_words        = 1
 let g:mucomplete#spel#max               = 10
+let g:mucomplete#chains = {
+        \ 'default' : ['path', 'omni', 'keyn', 'dict', 'uspl', 'c-n', 'c-p'],
+        \ 'vim'     : ['path', 'cmd', 'keyn', 'incl']
+        \ }
 if has('patch-7.4.775')
   set completeopt+=menuone,noinsert,noselect
   fun! s:toggle_completeopt()
