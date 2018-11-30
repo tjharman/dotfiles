@@ -34,6 +34,8 @@ set cursorline 			" Show where we're at
 set ttyfast 			" My TTY is plenty fast...
 set shortmess+=I
 set modeline
+set commentstring=#\ %s
+"These 6 lines disable plugins installed by default, that I don't want.
 let g:loaded_netrw             = 1 "$VIMRUNTIME/autoload/netrw.vim
 let g:loaded_netrwFileHandlers = 1 "$VIMRUNTIME/autoload/netrwFileHandlers.vim
 let g:loaded_netrwPlugin       = 1 "$VIMRUNTIME/plugin/netrwPlugin.vim
