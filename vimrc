@@ -61,17 +61,15 @@ set undoreload=10000            " number of lines to save for undo
 " Backup and Swap Location
 set dir=$HOME/.vimswap 			" Swap file location - Local not in
 set backupdir=$HOME/.vimbackup 		" Backup Location - Local not in
-" Ctrl-P
+" fzf
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'
       \ }
 let g:fzf_preview_window = 'right:60%'
 nnoremap <c-p> :Files<cr>
-"
-nnoremap <silent> <leader>u :CtrlPUndo<CR>		" Undo List
-nnoremap <silent> <leader>b :CtrlPBuffer<CR>		" Buffer List
-nnoremap <silent> <leader>l :CtrlPLine<CR>           " CtrlPLine
+nnoremap <silent> <leader>b :Buffers<CR>		" fzf Buffer List
+nnoremap <silent> <leader>l :Lines<CR>           	" fzf Line List
 "Lightline
 set noshowmode 						" Don't need this lightline shows us what mode we're in.
 let g:lightline = {
@@ -134,17 +132,4 @@ nmap <leader>gS <plug>(scratch-insert-clear)
 xmap <leader>gs <plug>(scratch-selection-reuse)
 xmap <leader>gS <plug>(scratch-selection-clear)
 " Dirvish
-let g:dirvish_mode = ':sort ,^.*[\/],'
-" If we have python, tweak a few settings for speed
-if has('python')
-  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-  let g:plug_threads     = 4
-endif
-if executable('rg')
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-elseif executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
-endif   
 let g:dirvish_mode = ':sort ,^.*[\/],'
