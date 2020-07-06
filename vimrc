@@ -10,17 +10,15 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sjl/badwolf'
 	Plug 'itchyny/lightline.vim'
 	Plug 'itchyny/lightline-powerful'
+	Plug 'itchyny/vim-gitbranch'
 	Plug 'mgee/lightline-bufferline'
-	Plug 'ctrlpvim/ctrlp.vim'
-	Plug 'lifepillar/vim-mucomplete'
-	Plug 'twitvim/twitvim', { 'on': ['PosttoTwitter', 'FriendsTwitter', 'RepliesTwitter', 'DMTwitter']}
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/vim-peekaboo'
+	Plug 'lifepillar/vim-mucomplete'
 	Plug 'mtth/scratch.vim'
 	Plug 'godlygeek/tabular',   { 'on': ['Tabularize', 'Tab'] }
 	Plug 'mhinz/vim-grepper',   { 'on':  'Grepper' }
-	if has('python')
-	Plug 'FelikZ/ctrlp-py-matcher'
-	endif
 call plug#end()
 set t_Co=256
 colorscheme badwolf
@@ -29,7 +27,6 @@ set hidden
 set hlsearch			" highlight all search matches
 set number 			" Linenumbers
 set showcmd 			" Show command
-set lazyredraw			" Lazy redrawing
 set cursorline 			" Show where we're at
 set ttyfast 			" My TTY is plenty fast...
 set shortmess+=I
@@ -65,16 +62,13 @@ set undoreload=10000            " number of lines to save for undo
 set dir=$HOME/.vimswap 			" Swap file location - Local not in
 set backupdir=$HOME/.vimbackup 		" Backup Location - Local not in
 " Ctrl-P
-let g:ctrlp_cmd                 = 'CtrlPMixed'
-let g:ctrlp_extensions          = ['undo', 'line', 'mixed']
-let g:ctrlp_match_window        = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer       = 0
-let g:ctrlp_working_path_mode   = 0
-let g:ctrlp_use_caching         = 1
-let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_show_hidden         = 1
-let g:ctrlp_max_files           = 0
-let g:ctrlp_lazy_update         = 250
+let g:fzf_action = {
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \ }
+let g:fzf_preview_window = 'right:60%'
+nnoremap <c-p> :Files<cr>
+"
 nnoremap <silent> <leader>u :CtrlPUndo<CR>		" Undo List
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>		" Buffer List
 nnoremap <silent> <leader>l :CtrlPLine<CR>           " CtrlPLine
@@ -102,12 +96,6 @@ nmap <Leader>7 <Plug>lightline#bufferline#go(7)
 nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
-" TwitVim
-let twitvim_browser_cmd = 'links'
-nnoremap <silent> <leader>tp :PosttoTwitter<CR> 	" Post
-nnoremap <silent> <leader>tf :FriendsTwitter<CR> 	" Friends
-nnoremap <silent> <leader>tr :RepliesTwitter<CR> 	" Replies 
-nnoremap <silent> <leader>td :DMTwitter<CR> 		" Direct Messages
 " Grepper
 nnoremap <leader>g :Grepper -tool rg<CR>                " Open Grepper using rg
 " µcomplete
@@ -154,7 +142,9 @@ if has('python')
 endif
 if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
 elseif executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
 endif   
 let g:dirvish_mode = ':sort ,^.*[\/],'
