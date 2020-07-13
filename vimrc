@@ -103,7 +103,8 @@ endif
 if has('patch-7.4.793')
   set belloff+=ctrlg
 endif
-let g:mucomplete#enable_auto_at_startup = 0
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#completion_delay = 200
 let g:mucomplete#spel#good_words        = 1
 let g:mucomplete#spel#max               = 10
 let g:mucomplete#chains = {
