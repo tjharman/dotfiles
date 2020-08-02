@@ -18,7 +18,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'lifepillar/vim-mucomplete'
 	Plug 'mtth/scratch.vim'
 	Plug 'godlygeek/tabular',   { 'on': ['Tabularize', 'Tab'] }
-	Plug 'mhinz/vim-grepper',   { 'on':  'Grepper' }
 call plug#end()
 set t_Co=256
 colorscheme badwolf
@@ -94,8 +93,6 @@ nmap <Leader>7 <Plug>lightline#bufferline#go(7)
 nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
-" Grepper
-nnoremap <leader>g :Grepper -tool rg<CR>                " Open Grepper using rg
 " µcomplete
 if has('patch-7.4.314')
   set shortmess+=c
