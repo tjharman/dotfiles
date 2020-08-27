@@ -67,8 +67,9 @@ let g:fzf_action = {
       \ }
 let g:fzf_preview_window = 'right:60%'
 nnoremap <c-p> :Files<cr>
-nnoremap <silent> <leader>b :Buffers<CR>		" fzf Buffer List
-nnoremap <silent> <leader>l :Lines<CR>           	" fzf Line List
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>h :History<CR> 
+nnoremap <silent> <leader>l :Lines<CR> 
 "Lightline
 set noshowmode 						" Don't need this lightline shows us what mode we're in.
 let g:lightline = {
