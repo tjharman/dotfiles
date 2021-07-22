@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-eunuch'
 	Plug 'justinmk/vim-dirvish'
+	Plug 'itchyny/vim-gitbranch'
 	Plug 'sstallion/vim-wtf'
 	Plug 'sjl/badwolf'
 	Plug 'itchyny/lightline.vim'
