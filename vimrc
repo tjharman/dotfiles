@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-eunuch'
+	Plug 'tpope/vim-fugitive'
 	Plug 'justinmk/vim-dirvish'
 	Plug 'itchyny/vim-gitbranch'
 	Plug 'sstallion/vim-wtf'
@@ -14,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'itchyny/vim-gitbranch'
 	Plug 'mgee/lightline-bufferline'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim'
+	Plug 'junegunn/fzf.vim', { 'on': ['FZF', 'Files', 'Buffer', 'History', 'Colors', 'Marks', 'Windows', 'Maps', 'Filetypes', 'Rg']}
 	Plug 'junegunn/vim-peekaboo'
 	Plug 'lifepillar/vim-mucomplete'
 	Plug 'mtth/scratch.vim'
