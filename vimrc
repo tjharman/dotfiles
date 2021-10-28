@@ -7,19 +7,16 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-eunuch'
 	Plug 'tpope/vim-fugitive'
 	Plug 'justinmk/vim-dirvish'
-	Plug 'itchyny/vim-gitbranch'
 	Plug 'sstallion/vim-wtf'
 	Plug 'sjl/badwolf'
-	Plug 'itchyny/lightline.vim'
-	Plug 'itchyny/lightline-powerful'
-	Plug 'itchyny/vim-gitbranch'
-	Plug 'mgee/lightline-bufferline'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim', { 'on': ['FZF', 'Files', 'Buffer', 'History', 'Colors', 'Marks', 'Windows', 'Maps', 'Filetypes', 'Rg']}
+	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/vim-peekaboo'
 	Plug 'lifepillar/vim-mucomplete'
 	Plug 'mtth/scratch.vim'
 	Plug 'godlygeek/tabular',   { 'on': ['Tabularize', 'Tab'] }
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 set t_Co=256
 colorscheme badwolf
@@ -63,6 +60,7 @@ set undoreload=10000            " number of lines to save for undo
 set dir=$HOME/.vimswap 			" Swap file location - Local not in
 set backupdir=$HOME/.vimbackup 		" Backup Location - Local not in
 " fzf
+let g:fzf_statusline = 0
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'
@@ -72,30 +70,6 @@ nnoremap <c-p> :Files<cr>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>h :History<CR> 
 nnoremap <silent> <leader>l :Lines<CR> 
-"Lightline
-set noshowmode 						" Don't need this lightline shows us what mode we're in.
-let g:lightline = {
-      \ 'colorscheme': 'darcula',
-      \ }
-"Bufferline
-set showtabline=2
-if has('gui_running')
-	set guioptions-=e
-endif
-let g:lightline.tabline                = {'left': [['buffers']], 'right': [['close']]}
-let g:lightline.component_expand       = {'buffers': 'lightline#bufferline#buffers'}
-let g:lightline.component_type         = {'buffers': 'tabsel'}
-let g:lightline#bufferline#show_number = 2
-nmap <Leader>1 <Plug>lightline#bufferline#go(1)
-nmap <Leader>2 <Plug>lightline#bufferline#go(2)
-nmap <Leader>3 <Plug>lightline#bufferline#go(3)
-nmap <Leader>4 <Plug>lightline#bufferline#go(4)
-nmap <Leader>5 <Plug>lightline#bufferline#go(5)
-nmap <Leader>6 <Plug>lightline#bufferline#go(6)
-nmap <Leader>7 <Plug>lightline#bufferline#go(7)
-nmap <Leader>8 <Plug>lightline#bufferline#go(8)
-nmap <Leader>9 <Plug>lightline#bufferline#go(9)
-nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 " µcomplete
 if has('patch-7.4.314')
   set shortmess+=c
@@ -134,3 +108,7 @@ xmap <leader>gs <plug>(scratch-selection-reuse)
 xmap <leader>gS <plug>(scratch-selection-clear)
 " Dirvish
 let g:dirvish_mode = ':sort ,^.*[\/],'
+" Airline
+set noshowmode
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_highlighting_cache = 1
