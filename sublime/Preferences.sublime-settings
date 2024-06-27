@@ -1,0 +1,19 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"dictionary": "Packages/User/en_AU.dic",
+	"theme": "Default Dark.sublime-theme",
+	"color_scheme": "Celeste.sublime-color-scheme",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"index_files": true,
+	"always_show_minimap_viewport": true,
+	"draw_minimap_border": true,
+	"caret_style": "smooth",
+	"caret_extra_top": 0,
+	"caret_extra_bottom": 0,
+	"caret_extra_width": 1,
+	"test": 1
+}
