@@ -15,5 +15,5 @@
 	"caret_extra_top": 0,
 	"caret_extra_bottom": 0,
 	"caret_extra_width": 1,
-	"test": 1
+	"auto_complete_commit_on_tab": true,
 }
