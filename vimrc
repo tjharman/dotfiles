@@ -17,9 +17,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'godlygeek/tabular',   { 'on': ['Tabularize', 'Tab'] }
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+	Plug 'doums/darcula'
+	Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 set t_Co=256
-colorscheme badwolf
+colorscheme dracula
 let mapleader=","               " I'll use comma thanks
 set hidden
 set hlsearch			" highlight all search matches
