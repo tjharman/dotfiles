@@ -3,7 +3,7 @@
 {
 	"dictionary": "Packages/User/en_AU.dic",
 	"theme": "Default Dark.sublime-theme",
-	"color_scheme": "Celeste.sublime-color-scheme",
+	"color_scheme": "Dracula Pro (Alucard).sublime-color-scheme",
 	"ignored_packages":
 	[
 		"Vintage",
