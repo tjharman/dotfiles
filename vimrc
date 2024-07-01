@@ -19,7 +19,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 set t_Co=256
-colorscheme badwolf
+colorscheme dracula
 let mapleader=","               " I'll use comma thanks
 set hidden
 set hlsearch			" highlight all search matches
