@@ -16,4 +16,6 @@
 	"caret_extra_bottom": 0,
 	"caret_extra_width": 1,
 	"auto_complete_commit_on_tab": true,
+	"show_encoding": true,
+	"show_line_endings": true,
 }
