@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-fugitive'
 	Plug 'justinmk/vim-dirvish'
 	Plug 'sstallion/vim-wtf'
-	Plug 'sjl/badwolf'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/vim-peekaboo'
@@ -17,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'godlygeek/tabular',   { 'on': ['Tabularize', 'Tab'] }
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+	Plug 'dracula/vim'
 call plug#end()
 set t_Co=256
 colorscheme dracula
