@@ -9,7 +9,7 @@
 		"Vintage",
 	],
 	"index_files": true,
-	"always_show_minimap_viewport": true,
+	"always_show_minimap_viewport": false,
 	"draw_minimap_border": true,
 	"caret_style": "smooth",
 	"caret_extra_top": 0,
@@ -18,4 +18,5 @@
 	"auto_complete_commit_on_tab": true,
 	"show_encoding": true,
 	"show_line_endings": true,
+	"open_files_in_new_window": false,
 }
