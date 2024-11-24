@@ -8,20 +8,17 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-fugitive'
 	Plug 'justinmk/vim-dirvish'
 	Plug 'sstallion/vim-wtf'
-	Plug 'sjl/badwolf'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/vim-peekaboo'
 	Plug 'lifepillar/vim-mucomplete'
 	Plug 'mtth/scratch.vim'
 	Plug 'godlygeek/tabular',   { 'on': ['Tabularize', 'Tab'] }
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
-	Plug 'doums/darcula'
-	Plug 'dracula/vim', { 'as': 'dracula' }
+	Plug 'itchyny/lightline.vim'
+	Plug 'phanviet/vim-monokai-pro'
 call plug#end()
 set t_Co=256
-colorscheme dracula
+colorscheme monokai_pro
 let mapleader=","               " I'll use comma thanks
 set hidden
 set hlsearch			" highlight all search matches
@@ -110,7 +107,6 @@ xmap <leader>gs <plug>(scratch-selection-reuse)
 xmap <leader>gS <plug>(scratch-selection-clear)
 " Dirvish
 let g:dirvish_mode = ':sort ,^.*[\/],'
-" Airline
-set noshowmode
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_highlighting_cache = 1
+let g:lightline = {
+	      \ 'colorscheme': 'wombat',
+              \ }
