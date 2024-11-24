@@ -14,8 +14,14 @@ call plug#begin('~/.vim/plugged')
 	Plug 'lifepillar/vim-mucomplete'
 	Plug 'mtth/scratch.vim'
 	Plug 'godlygeek/tabular',   { 'on': ['Tabularize', 'Tab'] }
+<<<<<<< HEAD
 	Plug 'itchyny/lightline.vim'
 	Plug 'phanviet/vim-monokai-pro'
+=======
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'dracula/vim'
+>>>>>>> 206f0149958458ac9a7ea85338b443cbdd2e6000
 call plug#end()
 set t_Co=256
 colorscheme monokai_pro
