@@ -15,10 +15,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mtth/scratch.vim'
 	Plug 'godlygeek/tabular',   { 'on': ['Tabularize', 'Tab'] }
 	Plug 'itchyny/lightline.vim'
-	Plug 'phanviet/vim-monokai-pro'
+	Plug 'ku1ik/vim-monokai'
 call plug#end()
 set t_Co=256
-colorscheme monokai_pro
+colorscheme monokai
 let mapleader=","               " I'll use comma thanks
 set hidden
 set hlsearch			" highlight all search matches
