@@ -70,12 +70,8 @@ nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>h :History<CR> 
 nnoremap <silent> <leader>l :Lines<CR> 
 " µcomplete
-if has('patch-7.4.314')
-  set shortmess+=c
-endif
-if has('patch-7.4.793')
-  set belloff+=ctrlg
-endif
+set shortmess+=c
+set belloff+=ctrlg
 let g:mucomplete#enable_auto_at_startup = 1
 let g:mucomplete#completion_delay = 200
 let g:mucomplete#spel#good_words        = 1
@@ -84,17 +80,16 @@ let g:mucomplete#chains = {
         \ 'default' : ['path', 'omni', 'keyn', 'dict', 'uspl', 'c-n', 'c-p'],
         \ 'vim'     : ['path', 'cmd', 'keyn', 'incl']
         \ }
-if has('patch-7.4.775')
-  set completeopt+=menuone,noinsert,noselect
-  fun! s:toggle_completeopt()
-    if exists('#MUcompleteAuto')
-      setlocal completeopt+=noinsert,noselect
-    else
-     setlocal completeopt-=noinsert,noselect
-    endif
-  endf
-  nnoremap <silent> <leader>mu :<c-u>MUcompleteAutoToggle<CR>:call <sid>toggle_completeopt()<CR>
-endif
+set completeopt+=menuone,noinsert,noselect
+fun! s:toggle_completeopt()
+  if exists('#MUcompleteAuto')
+    setlocal completeopt+=noinsert,noselect
+  else
+   setlocal completeopt-=noinsert,noselect
+  endif
+endf
+nnoremap <silent> <leader>mu :<c-u>MUcompleteAutoToggle<CR>:call <sid>toggle_completeopt()<CR>
+
 " Peekaboo
 let g:peekaboo_ins_prefix = '<c-x>'
 " Scratch
